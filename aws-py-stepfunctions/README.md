@@ -1,0 +1,21 @@
+# AWS Step Functions (Python)
+
+A basic example that demonstrates using AWS Step Functions with a Lambda function, written in Python.
+
+```
+# Create and configure a new stack
+$ pulumi stack init stepfunctions-dev
+$ pulumi config set aws:region us-east-2
+
+# Install dependencies
+$ pip install
+
+# Preview and run the deployment
+$ pulumi update
+
+# Start execution using the AWS CLI (or from the console at https://console.aws.amazon.com/states)
+$ aws stepfunctions start-execution --state-machine-arn $(pulumi stack output stateMachineArn)
+
+# Remove the app
+$ pulumi destroy
+```
